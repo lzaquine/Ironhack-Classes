@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <h1 id="main-title">Big title</h1>
+    <h6>Small title</h6>
+
+    <ul>
+        <li>4 oranges</li>
+        <li>3 apples</li>
+        <li>1 mango</li>
+    </ul>
+    <ol>
+        <li>Peel the fruit</li>
+        <li>Smash the fruit</li>
+        <li>Drink the fruit</li>
+    </ol>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Bootcamp</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>Rita</td>
+            <td>UX/UI</td>
+            <td>Lisbon</td>
+        </tr>
+        <tr>
+            <td>Jose</td>
+            <td>Data</td>
+            <td>Barcelona</td>
+        </tr>
+    </table>
+
+    <hr>
+    <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" minlength="8" required>
+
+        <label for="number">Age</label>
+        <input type="number" placeholder="18" min="18">
+
+        <label for="date">Date</label>
+        <input type="date">
+
+        <button type="submit">Register</button>
+    </form>
+
+    <h1>Go back</h1>
+
+    <hr>
+
+    <a href="https://www.google.com" target="_blank">Go to Google</a>
+    <br>
+    <img src="https://static.scientificamerican.com/sciam/cache/file/32665E6F-8D90-4567-9769D59E11DB7F26_source.jpg?w=590&h=800&7E4B4CAD-CAE1-4726-93D6A160C2B068B2"
+        alt="Cat Picture" />
+    <br>
+    <a href="#main-title" target="_blank">Go to the top</a>
+
+    <!-- lorem*3 cria 3 paragrafos -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span>Provident nulla cumque voluptatem debitis,</span>
+        voluptatum
+        vel sint eligendi iusto nihil <b>ex ut porro</b> repellendus <strong>hic reiciendis</strong>, maiores quasi
+        facere esse vitae?</p>
+    <!-- b nao tem semantica, strong sim. se e importante, usar o strong, se nao, usar o b -->
+
+    <p>My favourite book is <i>Harry Potter</i></p>
+    <p>I told you <em>not</em> to do that!</p>
+     <!-- i nao tem semantica, em sim. se e importante, usar o em, se nao, usar o i -->
+
+    <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="ferrari">Ferrari</option>
+        <option value="bmw">BMW</option>
+    </select>
+
+    <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+</body>
+
+
+</html>

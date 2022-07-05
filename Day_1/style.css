@@ -1,0 +1,89 @@
+/* selector {
+    property: value;
+    property: value;
+} */
+
+*,
+*::before
+*:after {
+    box-sizing: border-box;
+}
+
+/* Type selector */
+
+p {
+  background-color: red;
+}
+
+/* Class selector */
+
+.box {
+  width: 300px;
+  height: 300px;
+}
+
+.blue-background {
+  background-color: blue;
+}
+
+.green-background {
+  background-color: green;
+}
+
+/* ID selector */
+
+#main-box {
+  width: 600px;
+  height: 600px;
+  background-color: blueviolet;
+}
+
+/* Universal selector */
+
+* {
+  font-family: monospace;
+}
+
+/* Colors */
+
+/* https://htmlcolorcodes.com/color-names/ */
+
+.red-background {
+  /* background-color: red;
+  background-color: #ff0000; */
+  background-color: rgb(255, 0, 0, 0.5);
+  color: white;
+}
+
+/* O quarto valor (,) do rgb é pra opacity */
+
+.box-model {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(138, 43, 226);
+
+
+    /* Border */ 
+    
+    /* border-width: 10px;
+    border-style: solid;
+    border-color: black; */
+    border: 10px solid black;
+    border-bottom: 30px solid black;
+    border-radius: 20px;
+    border-top-left-radius: 10px;
+    /* border-radius: 50%; -> forma um circulo */
+
+    /* This will target every side individually
+    starting at the top and going clock-wise */
+    padding: 20px 10px 20px 10px;
+
+    /* This will target first top and bottom 
+    and then left and right */
+    padding-top: 20px 10px;
+
+    /* This will target all sides */
+    padding: 20px;
+
+    margin: 50px 100px;
+}
