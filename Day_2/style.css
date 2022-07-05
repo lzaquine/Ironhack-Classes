@@ -1,0 +1,55 @@
+/* Direct descendant selector */
+
+#menu > li {
+    width: 100px;
+    height: 50px;
+    font-size: 32px;
+    background-color: red;
+}
+ul {
+    list-style: none;
+}
+div em {
+    color: red;
+}
+
+/* Adjacent Selector */
+
+#former + div {
+    background-color: red;
+}
+
+#former + p {
+    /* won't work */
+    background-color: red;
+}
+
+h1,
+h2,
+.im-blue p {
+    color: blue;
+}
+/* 
+h1 {
+    color: blue;
+}
+h2{
+    color: blue;
+}
+.im-blue > p {
+    color: blue;
+} */
+
+/* Attribute Selector */
+
+a[href="www.google.com"] {
+    color: green;
+}
+
+a[href*="hack"] {
+    color: black;
+}
+/* qualquer tipo funciona */
+/* input[type="number"] {
+}
+ */

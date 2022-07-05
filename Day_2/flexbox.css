@@ -1,0 +1,35 @@
+.container {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* flex-flow: row wrap; */
+    justify-content: space-around; /* horizontal */
+    align-items: flex-start; /* vertical */
+    align-content: space-between;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    color: white;
+    font-size: 32px;
+}
+.red {
+    background-color: red;
+    /* order tem default de 0 */
+   /*  order: 1;
+    flex-grow: 1; */
+}
+.blue {
+    background-color: blue;
+    /* order: 2;
+    flex-grow: 2; */
+}
+.green {
+    background-color: green;
+    align-self: center;
+}
+.yellow {
+    background-color: yellow;
+}
