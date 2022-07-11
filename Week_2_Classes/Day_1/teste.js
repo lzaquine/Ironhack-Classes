@@ -17,6 +17,7 @@ console.log(arr);
 // ou 
 const capitalCities = cities.map((city) => city[0].toUpperCase() + city.slice(1) + city.split(' '));
 console.log(arr);
+// falta colocar a 1 letra da 2 palavra em maiusculo
 
 // Using reduce - Return the total value of the items in the store
 
