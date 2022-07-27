@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-top">
+    <img
+      src="{{this.imgUrl}}"
+      alt="Pokemons"
+    />
+  </div>
+  <div class="card-body">
+    <div class="card-title">{{this.name}} <span>Nº: {{this.id}}</span></div>
+    <div class="card-text">{{this.type}}</div>
+    <div class="card-sprite">
+        {{#each sprites}}
+        <img src="{{this}}" alt="Sprites"/>
+        {{/each}}
+    </div>
+  </div>
+</div>

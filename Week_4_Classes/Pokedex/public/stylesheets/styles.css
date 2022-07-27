@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+nav {
+    display: flex;
+    background-color:blueviolet;
+    height: 8vh;
+    justify-content: space-around;
+    align-items: center;
+}
+nav a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+nav a:hover {
+    color: black;
+}
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 8vh;
+}
+.card-top img {
+    width: 12vw;
+}
+.card-top {
+    display: flex;
+    justify-content: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32vw;
+    border: 2px solid blueviolet;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 12px;
+}
+.card-text {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+.card a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+.card a:hover {
+    color: black;
+}
+.card-title {
+    display: flex;
+    justify-content: space-between;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+.card-sprite {
+    display: flex;
+    justify-content: space-evenly;
+}
+.card-sprite img {
+    width: 12vw;
+}
