@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HBS examples</title>
+  </head>
+  <body>
+    <h1>Web dev class be like:</h1>
+    <img src="./images/cat.jpg" alt="Cat"/>
+    <h1>Hello {{name}} {{#if}} {{lastName}} {{/if}}.</h1>
+
+    {{#if lastName}}
+      <h2>Your last name is {{lastName}}.</h2>
+    {{/if}}
+
+    <p>Welcome to the {{bootcamp}} class.</p>
+
+    {{#if address}}
+
+    <p>{{address.street}} {{address.number}}</p>
+
+        {{else}}
+    <p>No address provided yet.</p>
+    {{/if}}
+
+    {{#with address}}
+    <p>{{street}} {{number}}</p>
+    {{/with}}
+
+    {{#unless address}}
+        <p>Still no address. Please submit it.</p>
+    {{/unless}}
+
+
+    <ul>
+    {{#each cities}}
+        {{#if @first}}
+        <li><b>{{this}}</b>></li>
+        {{else if @last}}
+        <li><i>{{this}}</i></li>
+        {{else}}
+        <p>{{this}}</p>
+        {{/if}}
+    {{/each}}
+    </ul>
+
+
+  </body>
+</html>
