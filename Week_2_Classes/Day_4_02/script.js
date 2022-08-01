@@ -78,7 +78,7 @@ ctx.strokeText('Hello world', 400, 200); */
 
 // Images
 const blockImg = new Image();
-blockImg.addEventListener('load', function (){
+blockImg.addEventListener('load', function (){ //why did he use function and not =>?
     //ctx.drawImage(image, x, y, width, height)
     ctx.drawImage(blockImg, 0, 0, 50, 50);
 });
@@ -102,7 +102,7 @@ function draw() {
 function drawPattern (){
     let blockPattern = ctx.createPattern(blockImg, 'repeat');
     ctx.fillStyle = blockPattern;
-    ctx.fillRect(0, 0, 900, 600);
+    ctx.fillRect(0, 0, 900, 550);
 }
 setTimeout(() => {
     drawPattern();
