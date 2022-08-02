@@ -1,0 +1,21 @@
+<h1>Create book</h1>
+<hr>
+
+{{! on edit, we need to use value}}
+
+<form action="/books/{{_id}}/edit" method="post">
+
+    <label for="title">Title</label>
+    <input type="text" name="title" value="{{title}}">
+
+    <label for="author">Author</label>
+    <input type="text" name="author" id="author" value="{{author}}">
+
+    <label for="description">Description</label>
+    <textarea name="description" cols="30" rows="4">{{description}}</textarea>
+
+    <label for="rate">Rating</label>
+    <input type="number" min="0" max="10" name="rating" id="rate" value="{{rating}}">
+
+    <button type="submit">Edit Book</button>
+</form>
