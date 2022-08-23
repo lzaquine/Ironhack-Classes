@@ -29,11 +29,11 @@ function AddProject({getProjects}) {
     <div className='AddProject'>
         <h1>Add Project</h1>
         <form onSubmit={handleSubmit}>
-
+            <h3>Title:</h3>
             <label htmlFor="title">
             <input type='text' value={title} onChange={handleTitle} />
             </label>
-
+            <h3>Description:</h3>
             <label htmlFor="description">
             <input type='text' value={description} onChange={handleDescription} />
             </label>

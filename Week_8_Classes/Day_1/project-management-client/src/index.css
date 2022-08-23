@@ -28,7 +28,7 @@ textarea {
   margin: 10px;
 }
  
-.Navbar {
+nav {
   background: #515f7d;
   color: white;
   padding: 0px 20px;
@@ -38,7 +38,7 @@ textarea {
   padding: 5px;
 }
  
-.Navbar li {
+nav li {
   list-style: none;
   color: white;
   font-size: 24px;
@@ -62,7 +62,9 @@ textarea {
  
 .EditProjectPage,
 .AddProject,
-.AddTask {
+.AddTask,
+.SignupPage,
+.LoginPage {
   background: #f9eec3;
   border: 1px solid grey;
   box-shadow: 0px 2px 3px grey;
@@ -78,9 +80,20 @@ textarea {
   background-color: rgb(239, 196, 88);
 }
  
+.SignupPage,
+.LoginPage {
+  background-color: #608dd5;
+}
+ 
+.LoginPage {
+  background-color: #94a7c8;
+}
+ 
 .EditProjectPage form,
 .AddTask form,
-.AddProject form {
+.AddProject form,
+.SignupPage form,
+.LoginPage form {
   display: flex;
   flex-direction: column;
   align-items: center;
