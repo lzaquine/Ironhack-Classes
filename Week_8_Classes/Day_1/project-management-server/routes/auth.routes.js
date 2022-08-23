@@ -3,6 +3,8 @@ const router = require("express").Router();
 // ℹ️ Handles password encryption
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+
 
 // How many rounds should bcrypt run the salt (default [10 - 12 rounds])
 const saltRounds = 10;
@@ -10,15 +12,15 @@ const saltRounds = 10;
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
 
-// Require necessary (isLoggedOut and isLoggedIn) middleware in order to control access to specific routes
-const isLoggedOut = require("../middleware/isLoggedOut");
-const isLoggedIn = require("../middleware/isLoggedIn");
+const { isAuthenticated } = require("../middleware/jwt.middleware");
 
-router.get("/loggedin", (req, res) => {
-  res.json(req.user);
+router.get("/verify", isAuthenticated, (req, res) => {
+  console.log('the token: (or not)', req.payload)
+
+  res.status(200).json(req.payload);
 });
 
-router.post("/signup", isLoggedOut, (req, res) => {
+router.post("/signup", (req, res) => {
   const { username, password } = req.body;
 
   if (!username) {
@@ -67,7 +69,6 @@ router.post("/signup", isLoggedOut, (req, res) => {
       })
       .then((user) => {
         // Bind the user to the session object
-        req.session.user = user;
         res.status(201).json(user);
       })
       .catch((error) => {
@@ -85,7 +86,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   });
 });
 
-router.post("/login", isLoggedOut, (req, res, next) => {
+router.post("/login", (req, res, next) => {
   const { username, password } = req.body;
 
   if (!username) {
@@ -115,9 +116,20 @@ router.post("/login", isLoggedOut, (req, res, next) => {
         if (!isSamePassword) {
           return res.status(400).json({ errorMessage: "Wrong credentials." });
         }
-        req.session.user = user;
-        // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.json(user);
+
+        // Destructuring what we want from the user
+        const {_id, username} = user;
+        
+        // Creating the payload with the properties we want to save on the token
+        const payload = {_id, username};
+
+        // Creating the token 
+        const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, {
+          algorithm: "HS256",
+          expiresIn: "14d",
+        });
+
+        return res.status(200).json({ authToken: authToken });
       });
     })
 
@@ -127,15 +139,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       next(err);
       // return res.status(500).render("login", { errorMessage: err.message });
     });
-});
-
-router.get("/logout", isLoggedIn, (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      return res.status(500).json({ errorMessage: err.message });
-    }
-    res.json({ message: "Done" });
-  });
 });
 
 module.exports = router;
