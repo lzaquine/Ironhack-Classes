@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 
 function ProjectDetails() {
@@ -38,6 +38,11 @@ function ProjectDetails() {
                 ))}
             </>
     )}
+        <Link to="/projects">
+            <button>Go back</button>
+        </Link>
+
+        <Link to={`/projects/edit/${id}`}> Edit project</Link>
     </div>
   )
 }
